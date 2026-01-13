@@ -26,7 +26,11 @@ For about ten years (2012~2022), the percentage of Show HN stories was around 2-
 
 People can create things even if they don't know how to code. So I am pretty sure there is a correlation between the increase in Show HN posts and LLM.
 
-However, their average scores are declining. Show HN stories used to receive similar scores (around 15-18) to those of all stories until 2023~2024. However, as of December 2025, the average Show HN score is 10 points lower (9.04 vs 19.53). Though I'm not sure it's because LLM-generated Show HNs are lower quality. Maybe people don't like/trust LLM-generated products, regardless of their quality.
+However, their average scores are declining. Show HN stories used to receive similar scores (around 15-18) to those of all stories until 2023~2024, and was increasing. Which seems natural because more people means more votes.
+
+However, as of December 2025, the average Show HN score is 10 points lower (9.04 vs 19.53). Though I'm not sure it's because LLM-generated Show HNs are lower quality. Maybe people don't like/trust LLM-generated products, regardless of their quality.
+
+I have no idea why the average score was increased in 2022. A lot of new users, maybe.
 
 ## Data
 
