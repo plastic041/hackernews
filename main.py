@@ -57,7 +57,7 @@ result = all_months_df.join(result, on="year_month", how="left").with_columns(
 
 result = result.with_columns(
     [
-        pl.col("show_hn_ratio").round(2),
+        pl.col("show_hn_ratio").round(4),
         pl.col("average_show_hn_score").round(2),
         pl.col("average_story_score").round(2),
     ]
