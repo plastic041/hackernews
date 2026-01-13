@@ -8,7 +8,12 @@ df = df.with_columns([pl.from_epoch(pl.col("time"), time_unit="s").alias("dateti
 df = df.with_columns([pl.col("datetime").dt.strftime("%Y-%m").alias("year_month")])
 
 df = df.with_columns(
-    [pl.col("title").str.to_lowercase().str.contains("show hn").alias("is_show_hn")]
+    [
+        pl.col("title")
+        .str.to_lowercase()
+        .str.starts_with("show hn: ")
+        .alias("is_show_hn")
+    ]
 )
 
 
@@ -18,11 +23,18 @@ result = (
         [
             pl.col("is_show_hn").sum().alias("show_hn_count"),
             pl.len().alias("stories_count"),
+            (pl.len() - pl.col("is_show_hn").sum()).alias(
+                "stories_without_show_hn_count"
+            ),
             (pl.col("is_show_hn").sum() / pl.len()).alias("show_hn_ratio"),
             pl.col("score")
             .filter(pl.col("is_show_hn"))
             .mean()
             .alias("average_show_hn_score"),
+            pl.col("score")
+            .filter(~pl.col("is_show_hn"))
+            .mean()
+            .alias("average_non_show_hn_score"),
             pl.col("score").mean().alias("average_story_score"),
         ]
     )
@@ -51,6 +63,7 @@ result = all_months_df.join(result, on="year_month", how="left").with_columns(
     [
         pl.col("show_hn_count").fill_null(0),
         pl.col("stories_count").fill_null(0),
+        pl.col("stories_without_show_hn_count").fill_null(0),
         pl.col("show_hn_ratio").fill_null(0.0),
     ]
 )
@@ -59,6 +72,7 @@ result = result.with_columns(
     [
         pl.col("show_hn_ratio").round(4),
         pl.col("average_show_hn_score").round(2),
+        pl.col("average_non_show_hn_score").round(2),
         pl.col("average_story_score").round(2),
     ]
 )
