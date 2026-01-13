@@ -8,9 +8,9 @@ I included the average score per month to see if people enjoy seeing them(becaus
 
 `story` includes `show_hn`.
 
-Left axis: `show_hn / story * 100`
+Left axis: `show_hn_ratio`(`show_hn / story * 100`)
 
-Right axis: average scores
+Right axis: `average_show_hn_score` and `average_story_score`
 
 ![Chart](https://github.com/user-attachments/assets/687db895-b99b-4fc0-aba3-681489473b7b)
 
