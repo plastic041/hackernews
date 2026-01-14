@@ -1,10 +1,3 @@
----
-title: "The percentage of Show HN posts is increasing, but their scores are decreasing"
-description: ""
-pubDate: 2026-01-13
-slug: "Show-HN"
----
-
 Last update: 2026-01-14
 
 Recently, I felt like I was seeing more "Show HN" stories, and many of which were generated with LLMs. So I analyzed the data to see if that was true. Also I included the average score per month to see if people enjoy seeing them (because I don't :P).
