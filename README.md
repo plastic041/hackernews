@@ -57,4 +57,4 @@ I didn't commit to the repo the original CSV because it was too big (~400 MB) bu
 
 I would like to analyze the percentage of Show HN stories generated with LLMs but I couldn't find the way to do this, because many Show HN stories don't mention that they've used LLMs in their text.
 
-I'll try to update this article every few months.
+I'll try to update this every few months.
